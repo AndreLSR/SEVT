@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: my-rc
+  name: frontend
 spec:
   replicas: 1
   selector:
@@ -17,7 +17,7 @@ spec:
         track: stable
     spec:
       containers:
-      - name: sevt-latest
+      - name:  sevt-latest
         image: andrelsr/sevt:latest
         ports:
         - containerPort: 8080

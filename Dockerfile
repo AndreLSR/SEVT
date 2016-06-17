@@ -5,7 +5,11 @@ FROM golang:alpine
 
 # Copy the local package files to the container's workspace.
 ADD . /go/src/github.com/andrelsr/sevt
+ADD . /go/src/github.com/CiscoZeus
 
+RUN apk add --no-cache git \
+    && go get github.com/CiscoZeus/go-zeusclient \
+    && apk del git
 
 # Build the outyet command inside the container.
 # (You may fetch or manage dependencies here,
